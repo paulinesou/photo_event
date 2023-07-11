@@ -1,0 +1,36 @@
+/*
+Theme Name: Photo Event
+Theme URI: https://www.cookinfamily.fr
+Author: OpenClassrooms
+Author URI: https://openclassrooms.com
+Description: Thème pour une photographe
+Version: 1.0
+Tags: evenementie, photo, photographe
+Text Domain: photoevent
+*/
+
+/* Déclaration de mes polices */
+@font-face {
+	font-family: 'Poppins Light';
+	src: url('assets/fonts/Poppins-Light.ttf') format('truetype'),
+		 url('assets/fonts/Poppins-Medium.ttf') format('truetype'),
+		 url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Space Mono';
+	src: url('assets/fonts/SpaceMono-Bold.ttf') format('truetype'),
+		 url('assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
+#menu-home, .menu{
+    font-family: 'Space Mono';
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
