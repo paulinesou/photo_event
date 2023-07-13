@@ -23,14 +23,45 @@ Text Domain: photoevent
 		 url('assets/fonts/SpaceMono-Regular.ttf') format('truetype');
 }
 
-#menu-home, .menu{
+.header{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.nav-header{
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+#menu-home{
     font-family: 'Space Mono';
+	display: flex;
+	gap: 50px;
+	margin: 0;
+}
+
+#menu-pied-de-page{
+	font-family: 'Space Mono';
+	display: flex;
+	justify-content: center;
+	gap: 40px;
 }
 
 a{
     text-decoration: none;
+	color: black;
+	text-transform: uppercase;
 }
 
 ul{
     list-style-type: none;
 }
+
+.image-header{
+	max-width: 100%;
+}
+

@@ -10,16 +10,19 @@
 <body <?php body_class(); ?>>
 
     <header class="header">
-        <a href="<?php echo home_url( '/' ); ?>">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo de la photographe Nathalie Mota">
-        </a>  
-        <?php 
-	wp_nav_menu(array('theme_location' => 'main', 
-        'container' => 'ul', // afin d'éviter d'avoir une div autour 
-        'menu_class' => 'site__header__menu', // ma classe personnalisée
-        ) 
-    ); 
-?>
+        <div class="nav-header">
+            <a href="<?php echo home_url( '/' ); ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo de la photographe Nathalie Mota">
+            </a>  
+            <?php 
+            wp_nav_menu([
+            'menu' => 'main', 
+            'container' => false, // afin d'éviter d'avoir une div autour
+            'class' => 'header_menu', // class personnalisée
+            ]);
+            ?>
+        </div>
+        <img class="image-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/nathalie-11.jpeg" alt="Photo de la photographe Nathalie Mota">
     </header>
     
     <?php wp_body_open(); ?>
