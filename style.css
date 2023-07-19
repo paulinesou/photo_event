@@ -65,3 +65,7 @@ ul{
 	max-width: 100%;
 }
 
+.img-galerie img{
+	max-width: 100px;
+	height: auto;
+}

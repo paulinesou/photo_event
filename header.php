@@ -23,6 +23,8 @@
             ?>
         </div>
         <img class="image-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/nathalie-11.jpeg" alt="Photo de la photographe Nathalie Mota">
+        <!-- <img class="text-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/titre_header.png" alt="Titre du header"> -->
+
     </header>
     
     <?php wp_body_open(); ?>
