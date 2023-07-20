@@ -9,7 +9,13 @@ Tags: evenementie, photo, photographe
 Text Domain: photoevent
 */
 
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
 /* Déclaration de mes polices */
+
 @font-face {
 	font-family: 'Poppins Light';
 	src: url('assets/fonts/Poppins-Light.ttf') format('truetype'),
@@ -23,12 +29,7 @@ Text Domain: photoevent
 		 url('assets/fonts/SpaceMono-Regular.ttf') format('truetype');
 }
 
-.header{
-	margin-left: 50px;
-	margin-right: 50px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
+/* HEADER */
 
 .nav-header{
 	display: flex;
@@ -44,13 +45,6 @@ Text Domain: photoevent
 	margin: 0;
 }
 
-#menu-pied-de-page{
-	font-family: 'Space Mono';
-	display: flex;
-	justify-content: center;
-	gap: 40px;
-}
-
 a{
     text-decoration: none;
 	color: black;
@@ -61,11 +55,44 @@ ul{
     list-style-type: none;
 }
 
-.image-header{
-	max-width: 100%;
+.background-header {
+	width: 100%;
+} 
+
+.text-header{
+	position: absolute;
+	left: 250px;
+	top: 550px;
+}
+
+/* GALERIE */
+
+.galerie{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 100px;
 }
 
 .img-galerie img{
-	max-width: 100px;
-	height: auto;
+	object-fit: cover;
+	width: 100%;
+	height: 495px;
+}
+
+article{
+	overflow: hidden;
+	width: 564px;
+	height: 495px;
+}
+
+
+/* FOOTER */
+
+#menu-pied-de-page{
+	font-family: 'Space Mono';
+	display: flex;
+	justify-content: center;
+	gap: 40px;
 }

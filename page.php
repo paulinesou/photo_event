@@ -6,7 +6,7 @@
     if ($galeries->have_posts()) :
         ?>
         <?php while ($galeries->have_posts()) : $galeries->the_post(); ?>
-            <div class="">
+            <div class="galerie-post">
                 <?php get_template_part('template-part/content', 'galerie-post'); ?>
             </div>
         <?php endwhile; ?>
