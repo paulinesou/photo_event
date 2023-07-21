@@ -18,15 +18,16 @@ body{
 
 @font-face {
 	font-family: 'Poppins Light';
-	src: url('assets/fonts/Poppins-Light.ttf') format('truetype'),
-		 url('assets/fonts/Poppins-Medium.ttf') format('truetype'),
-		 url('assets/fonts/Poppins-Regular.ttf') format('truetype');
+	src: url('assets/fonts/Poppins-Regular.ttf') format('truetype'),
+		 url('assets/fonts/Poppins-Light.ttf') format('truetype'),
+		 url('assets/fonts/Poppins-Medium.ttf') format('truetype');
+	
 }
 
 @font-face {
 	font-family: 'Space Mono';
-	src: url('assets/fonts/SpaceMono-Bold.ttf') format('truetype'),
-		 url('assets/fonts/SpaceMono-Regular.ttf') format('truetype');
+	src:  url('assets/fonts/SpaceMono-Regular.ttf') format('truetype'),
+		  url('assets/fonts/SpaceMono-Bold.ttf') format('truetype');
 }
 
 /* HEADER */
@@ -43,6 +44,7 @@ body{
 	display: flex;
 	gap: 50px;
 	margin: 0;
+	padding-left: 0;
 }
 
 a{
@@ -87,6 +89,61 @@ article{
 	height: 495px;
 }
 
+/* PAGE POST */
+
+.galerie-single-post{
+	display: flex;
+	width: 100%;
+	height: auto;
+}
+
+.infos{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: start;
+	font-family: 'Space Mono';
+	text-transform: uppercase;
+	border-bottom: solid 1px;
+}
+
+.infos h1{
+	font-style: italic;
+	font-size: 60px;
+	margin-left: 50px;
+}
+
+.infos p{
+	margin-left: 50px;
+}
+
+.img-post{
+	width: 50%;
+}
+
+.info-compl{
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'poppins';
+	border-bottom: solid 1px;
+}
+
+.info-compl p{
+	margin-left: 50px;
+}
+
+.info-similaire{
+	font-family: "Space Mono";
+	text-transform: uppercase;
+}
+
+.info-similaire p{
+	margin-left: 50px;
+}
+
 
 /* FOOTER */
 
@@ -95,4 +152,6 @@ article{
 	display: flex;
 	justify-content: center;
 	gap: 40px;
+	border-top: solid 1px;
+	padding-top: 5px;
 }
