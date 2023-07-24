@@ -1,5 +1,7 @@
+// MODALE CONTACT
+
 var modal = document.getElementById("modal");
-var contact = document.getElementById("menu-item-212");
+var contact = document.getElementById("btn-contact");
 
 contact.onclick = function(){
     modal.style.display = 'block';

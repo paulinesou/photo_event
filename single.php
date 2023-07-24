@@ -18,7 +18,7 @@
             </article>
             <div class="info-compl">
                 <p>Cette photo vous intéresse ?</p>
-                <input class="btn-single-post" type="button" value="Contact">
+                <button id="btn-contact">Contact</button>
                 <?php get_template_part('template-part/next-and-prev'); ?>
             </div>
             <div class="info-similaire">
