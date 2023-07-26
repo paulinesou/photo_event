@@ -8,10 +8,14 @@
                     <h1><?php the_title(); ?></h1>
                     <p><?php echo get_field_object('reference')['label']; ?> : 
                     <?php the_field('reference'); ?></p>
-                    <p><?php the_field('categorie'); ?></p>
-                    <p><?php the_field('format'); ?></p>
-                    <p><?php the_field('type'); ?></p>
-                    <p><?php the_field('annee'); ?></p>
+                    <p><?php echo get_field_object('categorie')['label']; ?> :
+                    <?php the_field('categorie'); ?></p>
+                    <p><?php echo get_field_object('format')['label']; ?> :
+                    <?php the_field('format'); ?></p>
+                    <p><?php echo get_field_object('type')['label']; ?> :
+                    <?php the_field('type'); ?></p>
+                    <p><?php echo get_field_object('annee')['label']; ?> :
+                    <?php the_field('annee'); ?></p>
                 </div>
                 <div class="img-post">
                 <?php the_post_thumbnail(); ?>
