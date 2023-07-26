@@ -6,3 +6,4 @@
         <?php previous_post_link('%link'); ?>
     </div>
 </div>
+

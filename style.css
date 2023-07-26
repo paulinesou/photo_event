@@ -83,6 +83,10 @@ ul{
 	height: 495px;
 }
 
+/* .img-galerie img:hover{
+	content: url(assets/icons/oeil.png);
+} */
+
 article{
 	overflow: hidden;
 	width: 564px;
@@ -178,10 +182,11 @@ article{
 
 #modal{
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
-	top: 100px;
+	top: 0;
 	width: 100%;
+	background: rgba(0,0,0,0.5);
 }
 
 .modal-contact{
