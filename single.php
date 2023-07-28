@@ -6,8 +6,8 @@
             <article class="galerie-single-post">
                 <div class="infos">
                     <h1><?php the_title(); ?></h1>
-                    <p><?php echo get_field_object('reference')['label']; ?> : 
-                    <?php the_field('reference'); ?></p>
+                    <p class="ref-contact"><?php echo get_field_object('reference')['label'];?> : 
+                    <?php the_field('reference');?></p>
                     <p><?php echo get_field_object('categorie')['label']; ?> :
                     <?php the_field('categorie'); ?></p>
                     <p><?php echo get_field_object('format')['label']; ?> :
@@ -18,7 +18,7 @@
                     <?php the_field('annee'); ?></p>
                 </div>
                 <div class="img-post">
-                <?php the_post_thumbnail(); ?>
+                    <?php the_post_thumbnail(); ?>
                 </div>
             </article>
             <div class="info-compl">

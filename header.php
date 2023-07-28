@@ -24,9 +24,14 @@
         </div>
         <!-- Condition d'affichage de l'image de mon header -->
         <?php if (is_front_page()) :?>
-        <div class="img-header">
-        <img class="text-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/titre_header.png" alt="Titre du header">
-        <img class="background-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/nathalie-11.jpeg" alt="Photo de la photographe Nathalie Mota">
+        <div>
+            <img class="text-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/titre_header.png" alt="Titre du header">
+            <!-- <img class="background-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/nathalie-11.jpeg" alt="Photo de la photographe Nathalie Mota"> -->
+            <?php
+                $images = array("/assets/images/nathalie-0.jpeg", "/assets/images/nathalie-1.jpeg", "/assets/images/nathalie-2.jpeg", "/assets/images/nathalie-3.jpeg", "/assets/images/nathalie-4.jpeg", "/assets/images/nathalie-5.jpeg", "/assets/images/nathalie-6.jpeg", "/assets/images/nathalie-7.jpeg", "/assets/images/nathalie-8.jpeg", "/assets/images/nathalie-9.jpeg", "/assets/images/nathalie-10.jpeg", "/assets/images/nathalie-11.jpeg", "/assets/images/nathalie-12.jpeg", "/assets/images/nathalie-13.jpeg", "/assets/images/nathalie-14.jpeg", "/assets/images/nathalie-15.jpeg");
+                $key = array_rand($images);
+                echo '<img src="' . $images[$key] . '"> '; ?>
+
         </div>
         <?php endif; ?>
     </header>

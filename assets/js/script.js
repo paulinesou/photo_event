@@ -1,26 +1,27 @@
 // MODALE CONTACT MENU
 
-let modalMenu = document.getElementById("modalMenu");
-let contactMenu = document.getElementById("menu-item-212"); 
+const modal = document.getElementById("modal");
+const contactMenu = document.getElementById("menu-item-212"); 
+const contactPost = document.getElementById("btn-contact");
 
 contactMenu.onclick = function(event){
-    modalMenu.style.display = 'block';
+    modal.style.display = 'block';
     event.preventDefault();
 }
 
 window.onclick = function(event) {
-    if (event.target == modalMenu) {
-        modalMenu.style.display = "none";
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
 }
 
-// MODALE CONTACT PAGE POST
-
-let modalPost = document.getElementById("modalPost");
-let contactPost = document.getElementById("btn-contact");
-
 contactPost.onclick = function(){
-    modalPost.style.display = 'block';
+    modal.style.display = 'block';
 }
 
-// RECUPERER REFERENCE
+// RECUPERER REFERENCE FORMULAIRE POST
+
+const valeurDiv = document.getElementsByClassName('ref-contact').innerText;
+const champInput = document.getElementById('ref');
+
+champInput.value = valeurDiv;
