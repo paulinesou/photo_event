@@ -6,8 +6,8 @@
             <article class="galerie-single-post">
                 <div class="infos">
                     <h1><?php the_title(); ?></h1>
-                    <p class="ref-contact"><?php echo get_field_object('reference')['label'];?> : 
-                    <?php the_field('reference');?></p>
+                    <p><?php echo get_field_object('reference')['label'];?> : 
+                    <span class="ref-contact"><?php the_field('reference');?></span></p>
                     <p><?php echo get_field_object('categorie')['label']; ?> :
                     <?php the_field('categorie'); ?></p>
                     <p><?php echo get_field_object('format')['label']; ?> :

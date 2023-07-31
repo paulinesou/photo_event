@@ -3,7 +3,8 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    
+    <!-- Lien bibliothèque font awesome -->
+    <script src="https://kit.fontawesome.com/61f1f173b3.js" crossorigin="anonymous"></script>
     <?php wp_head(); ?>
 </head>
 
@@ -24,13 +25,12 @@
         </div>
         <!-- Condition d'affichage de l'image de mon header -->
         <?php if (is_front_page()) :?>
-        <div>
+        <div class="img-text-header">
             <img class="text-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/titre_header.png" alt="Titre du header">
-            <!-- <img class="background-header" src="<?php echo get_template_directory_uri(); ?>/assets/images/nathalie-11.jpeg" alt="Photo de la photographe Nathalie Mota"> -->
             <?php
-                $images = array("/assets/images/nathalie-0.jpeg", "/assets/images/nathalie-1.jpeg", "/assets/images/nathalie-2.jpeg", "/assets/images/nathalie-3.jpeg", "/assets/images/nathalie-4.jpeg", "/assets/images/nathalie-5.jpeg", "/assets/images/nathalie-6.jpeg", "/assets/images/nathalie-7.jpeg", "/assets/images/nathalie-8.jpeg", "/assets/images/nathalie-9.jpeg", "/assets/images/nathalie-10.jpeg", "/assets/images/nathalie-11.jpeg", "/assets/images/nathalie-12.jpeg", "/assets/images/nathalie-13.jpeg", "/assets/images/nathalie-14.jpeg", "/assets/images/nathalie-15.jpeg");
+                $images = array("nathalie-0.jpeg", "nathalie-1.jpeg", "nathalie-2.jpeg", "nathalie-3.jpeg", "nathalie-4.jpeg", "nathalie-5.jpeg", "nathalie-6.jpeg", "nathalie-7.jpeg", "nathalie-8.jpeg", "nathalie-9.jpeg", "nathalie-10.jpeg", "nathalie-11.jpeg", "nathalie-12.jpeg", "nathalie-13.jpeg", "nathalie-14.jpeg", "nathalie-15.jpeg");
                 $key = array_rand($images);
-                echo '<img src="' . $images[$key] . '"> '; ?>
+                echo '<img class="background-header" src="'. get_template_directory_uri().'/assets/images/'. $images[$key] . '"> '; ?>
 
         </div>
         <?php endif; ?>
