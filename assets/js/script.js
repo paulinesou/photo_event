@@ -32,30 +32,3 @@ champRef.value = contenuTextuel;
 
 // LIGHTBOX
 
-class Lightbox {
-    static init(){
-        const links = document.querySelectorAll('a [href$="jpeg"]')
-        .forEach(link => link.addEventListener('click', e => {
-            e.preventDefault()
-            new Lightbox(e.currentTarget.getAttribute('href'))
-        }));
-    }
-}
-
-constructor(url);{
-    const element = this.buildDOM(url)
-    document.body.appendChild(element)
-}
-
-buildDOM(url); {
-    const dom = document.createElement('div')
-    dom.classList.add('lightbox')
-    dom.innerHTML = `<button class="lightbox-close">Fermer</button>
-        <button class="lightbox-next">Suivant</button>
-        <button class="lightbox-prev">Précédent</button>
-        <div class="lightbox-container"></div>`
-    dom.querySelector('.lightbox-close').addEventListener('click', this.close.bind(this))
-    dom.querySelector('.lightbox-next').addEventListener('click', this.next.bind(this))
-    dom.querySelector('.lightbox-prev').addEventListener('click', this.prev.bind(this))
-    return dom
-}

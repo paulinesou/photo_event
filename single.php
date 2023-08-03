@@ -28,6 +28,33 @@
             </div>
             <div class="info-similaire">
                 <p>Vous aimerez aussi</p>
+            
+                <div class="img-article-similaire">
+                <?php 
+                // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+                $args = array(
+                'post_type' => 'any',
+                'category_in' => 'mariage',
+                'posts_per_page' => 2,
+                'post__not_in'   => array( get_the_ID() ),
+                );
+
+                // 2. On exécute la WP Query
+                $my_query = new WP_Query( $args );
+
+                // 3. On lance la boucle !
+                if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post(); ?>
+
+                    <a class="" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+
+                <?php endwhile;
+                endif;
+    
+
+                // 4. On réinitialise à la requête principale (important)
+                wp_reset_postdata(); ?>
+                </div>
+                <button id="btn-photo">Toutes les photos</button>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>

@@ -15,11 +15,17 @@
 
 <!-- Div contenant ma lightbox -->
 <!-- <div class="lightbox">
-    <button class="lightbox-close">Fermer</button>
-    <button class="lightbox-next">Suivant</button>
-    <button class="lightbox-prev">Précédent</button>
+    <span class="lightbox-close">&times;</span>
+    <div class="">
+        <button class="lightbox-next">Suivante</button>
+        <img class="lightbox-arrow-next" src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow.svg" alt="">
+    </div>
+    <div class="">
+        <button class="lightbox-prev">Précédente</button>
+        <img class="lightbox-arrow-prev" src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow.svg" alt="">
+    </div>
     <div class="lightbox-container">
-        <a class="img-galerie" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <a class="img-lightbox" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
     </div>
 </div> -->
 
