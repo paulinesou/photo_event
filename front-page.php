@@ -29,8 +29,8 @@
     </div>
 </div> -->
 
-<div class="btn-charger-plus">
-    <button id="charger-plus">Charger plus</button>
+<div class="charger-plus">
+    <button class="btn btn-charger-plus">Charger plus</button>
 </div>
 
 <?php get_footer(); ?>

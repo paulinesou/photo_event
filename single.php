@@ -21,9 +21,11 @@
                     <?php the_post_thumbnail(); ?>
                 </div>
             </article>
-            <div class="info-compl">
-                <p>Cette photo vous intéresse ?</p>
-                <button id="btn-contact">Contact</button>
+            <div class="info-next-prev">
+                <div class="info-compl">
+                    <p>Cette photo vous intéresse ?</p>
+                    <button class="btn btn-contact">Contact</button>
+                </div>
                 <?php get_template_part('template-part/next-and-prev'); ?>
             </div>
             <div class="info-similaire">
@@ -34,9 +36,15 @@
                 // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
                 $args = array(
                 'post_type' => 'any',
-                'category_in' => 'mariage',
                 'posts_per_page' => 2,
                 'post__not_in'   => array( get_the_ID() ),
+                'meta_query' =>  [
+                    [
+                        'key' => 'categorie',
+                        'value' => '',
+                        'compare' => 'LIKE',
+                    ]
+                ],
                 );
 
                 // 2. On exécute la WP Query
@@ -54,7 +62,9 @@
                 // 4. On réinitialise à la requête principale (important)
                 wp_reset_postdata(); ?>
                 </div>
-                <button id="btn-photo">Toutes les photos</button>
+                <div class="plus-photo">
+                    <button class="btn btn-photo">Toutes les photos</button>
+                </div>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>

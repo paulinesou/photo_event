@@ -2,7 +2,7 @@
 
 const modal = document.getElementById("modal");
 const contactMenu = document.getElementById("menu-item-212"); 
-const contactPost = document.getElementById("btn-contact");
+const contactPost = document.querySelector(".btn-contact");
 
 contactMenu.onclick = function(event){
     modal.style.display = 'block';
