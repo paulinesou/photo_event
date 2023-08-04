@@ -72,6 +72,37 @@ ul{
 	top: 550px;
 }
 
+/* FILTRE */
+
+.filtre{
+	display: flex;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-top: 70px;
+}
+
+select{
+	width: 260px;
+	height: 43px;
+	background-color: white;
+	border: solid 1px #C9CCD1;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-family: "space mono";
+}
+
+.filtre-cat-form{
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.filtre-tri{
+	width: 50%;
+	display: flex;
+	justify-content: end;
+}
+
 /* GALERIE */
 
 .galerie{
@@ -79,7 +110,7 @@ ul{
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 10px;
-	margin-top: 100px;
+	margin-top: 40px;
 }
 
 .img-galerie img{
@@ -245,13 +276,13 @@ article{
 
 /* PAGE POST */
 
-.items{
-	background: linear-gradient(180deg, rgba(252,252,252,1) 1%,
-	rgba(251,251,251,1) 1%,
-	rgba(249,249,249,1) 1%,
-	rgba(250,250,250,1) 1%,
+/* .items{
+	background: linear-gradient(180deg, rgba(252,252,252,1) 1px,
+	rgba(251,251,251,1) 1px,
+	rgba(249,249,249,1) 1px,
+	rgba(250,250,250,1) 1px,
 	rgba(255, 255, 255,1) 100%);
-}
+} */
 
 .galerie-single-post{
 	display: flex;
@@ -309,7 +340,21 @@ article{
 	width: 50%;
 	display: flex;
 	justify-content: end;
-	align-items: center;
+}
+
+.arrows{
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+	width: 20%;
+
+}
+
+.img-arrow{
+	width: 80px;
+	height: 70px;
+	display: flex;
+	justify-content: center;
 }
 
 .info-similaire{

@@ -1,8 +1,13 @@
 <div class="nextandprev">
-    <div class="next">
-        <?php next_post_link('%link','<img class="" src="'. get_template_directory_uri().'/assets/icons/arrow.svg">'); ?>
+    <div class="img-arrow">
+        <!-- <a class="image-next-prev" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a> -->
     </div>
-    <div class="prev">
-        <?php previous_post_link('%link', '<i class="fas fa-arrow-left"></i>'); ?>
+    <div class="arrows">
+        <div class="next">
+            <?php next_post_link('%link','<i class="fas fa-arrow-left"></i>'); ?>
+        </div>
+        <div class="prev">
+            <?php previous_post_link('%link', '<i class="fas fa-arrow-right"></i>'); ?>
+        </div>
     </div>
 </div>

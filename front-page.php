@@ -1,5 +1,33 @@
 <?php get_header(); ?>
 
+<!-- Div contant mes filtres -->
+
+<div class="filtre">
+    <div class="filtre-cat-form">
+        <select name="filtre-categorie">
+            <option value="" selected="">Catégorie</option>
+            <option value="reception">Réception</option>
+            <option value="mariage">Marage</option>
+            <option value="concert">Concert</option>
+            <option value="television">Télévision</option>
+        </select>
+        <select name="filtre-format">
+            <option value="" selected="">Formats</option>
+            <option value="portrait">Portrait</option>
+            <option value="paysage">Paysage</option>
+        </select>
+    </div>
+    <div class="filtre-tri">
+        <select name="filtre-date">
+            <option value="" selected="">Trier par</option>
+            <option value="asc">Les plus récentes</option>
+            <option value="des">Les plus anciennes</option>
+        </select>
+    </div>
+</div>
+
+<!-- Div contenant ma galerie photo -->
+
 <div class="galerie">
     <?php
     $galeries = new WP_Query(['post_type' => 'galerie']);
