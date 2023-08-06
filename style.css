@@ -125,10 +125,10 @@ select{
 	height: 495px;
 }
 
-.image-galerie:hover ~ .image-contenu{
+/* .galerie-post:hover .image-contenu{
 	background: rgba(0,0,0,0.5);
 	display: block;
-}
+} */
 
 .image-contenu{
 	position: absolute;

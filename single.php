@@ -36,15 +36,11 @@
                 // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
                 $args = array(
                 'post_type' => 'any',
+                'meta_key' => 'categorie',
+                'meta_value' => get_field('categorie'), 
                 'posts_per_page' => 2,
+                'paged' => 1,
                 'post__not_in'   => array( get_the_ID() ),
-                'meta_query' =>  [
-                    [
-                        'key' => 'categorie',
-                        'value' => '',
-                        'compare' => 'LIKE',
-                    ]
-                ],
                 );
 
                 // 2. On exécute la WP Query
@@ -57,7 +53,6 @@
 
                 <?php endwhile;
                 endif;
-    
 
                 // 4. On réinitialise à la requête principale (important)
                 wp_reset_postdata(); ?>
