@@ -42,7 +42,7 @@
 </div>
 
 <!-- Div contenant ma lightbox -->
-<!-- <div class="lightbox">
+<div class="lightbox">
     <span class="lightbox-close">&times;</span>
     <div class="">
         <button class="lightbox-next">Suivante</button>
@@ -55,7 +55,7 @@
     <div class="lightbox-container">
         <a class="img-lightbox" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
     </div>
-</div> -->
+</div>
 
 <div class="charger-plus">
     <button class="btn btn-charger-plus">Charger plus</button>
