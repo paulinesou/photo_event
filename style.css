@@ -157,7 +157,7 @@ select{
 	right: 15px;
 }
 
-.icon-plein-ecran{
+#icon-plein-ecran{
 	color: white;
 	position: absolute;
 	right: 15px;
@@ -165,7 +165,7 @@ select{
 	cursor: pointer;
 }
 
-.icon-plein-ecran::before{
+#icon-plein-ecran::before{
 	font-size: 30px;
 }
 
@@ -189,23 +189,24 @@ article{
 
 /* LIGHTBOX */
 
-.lightbox{
+#lightbox{
 	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
+	background: rgba(0,0,0,0.8);
+	min-height: 100vh;
 	height: 100%;
-	background: rgba(0,0,0,0.9);
 	z-index: 10;
 }
 
 .lightbox-container{
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
-	margin: 0 50px;
+	margin-top: 150px;
   }
 
 .lightbox-next,
@@ -216,35 +217,18 @@ article{
 	position: fixed;
 	top: 0;
 	height: 100%;
-	z-index: 11;
 	cursor: pointer;
+	font-family: "space mono";
 }
 
 .lightbox-next{
-	right: 100px;
 	left: auto;
+	right: 200px;
 }
 
 .lightbox-prev{
+	left: 200px;
 	right: auto;
-	left: 100px;
-}
-
-.lightbox-arrow-next{
-	max-width: 50px;
-	right: 40px;
-	left: auto;
-	position: absolute;
-	top: 230px;
-}
-
-.lightbox-arrow-prev{
-	max-width: 50px;
-	right: auto;
-	left: 40px;
-	position: absolute;
-	top: 230px;
-	transform: rotate(180deg);
 }
 
 .lightbox-close{
@@ -254,6 +238,20 @@ article{
     top: 40px;
     right: 40px;
     cursor: pointer;
+}
+
+.lightbox-info{
+	display: flex;
+	justify-content: space-between;
+	width: 560px;
+	margin-left: 490px;
+}
+
+.lightbox-ref,
+.lightbox-categorie{
+	color: white;
+	font-family: "space mono";
+	text-transform: uppercase;
 }
 
 /* PAGINATION INFINI */
@@ -323,7 +321,7 @@ article{
 }
 
 .info-compl{
-	height: 100px;
+	height: 118px;
 	width: 50%;
 	display: flex;
 	justify-content: space-between;
@@ -347,7 +345,6 @@ article{
 	justify-content: space-between;
 	align-items: end;
 	width: 20%;
-
 }
 
 .img-arrow{
@@ -375,10 +372,20 @@ article{
 	gap: 30px;
 }
 
+.single-post{
+	display: flex;
+	justify-content: center;
+}
+
 .img-article-similaire img{
 	width: 564px;
 	height: 495px;
 	object-fit: cover;
+}
+
+.single-post:hover .image-contenu{
+	background: rgba(0,0,0,0.5);
+	display: block;
 }
 
 .plus-photo{

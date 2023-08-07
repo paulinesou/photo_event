@@ -2,7 +2,7 @@
 
 <!-- Div contant mes filtres -->
 
-<div class="filtre">
+<div id="home-filtre" class="filtre">
     <div class="filtre-cat-form">
         <select name="filtre-categorie">
             <option value="" selected="">Catégorie</option>
@@ -42,19 +42,21 @@
 </div>
 
 <!-- Div contenant ma lightbox -->
-<div class="lightbox">
+<div id="lightbox">
     <span class="lightbox-close">&times;</span>
     <div class="">
-        <button class="lightbox-next">Suivante</button>
-        <img class="lightbox-arrow-next" src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow.svg" alt="">
+        <button class="lightbox-next">Suivante &rarr;</button>
     </div>
     <div class="">
-        <button class="lightbox-prev">Précédente</button>
-        <img class="lightbox-arrow-prev" src="<?php echo get_template_directory_uri(); ?>/assets/icons/arrow.svg" alt="">
+        <button class="lightbox-prev">&larr; Précédente</button>
     </div>
     <div class="lightbox-container">
         <a class="img-lightbox" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
     </div>
+    <div class="lightbox-info">
+            <p class="lightbox-ref"><?php the_field('reference'); ?></p>
+            <p class="lightbox-categorie"><?php the_field('categorie'); ?></p>
+        </div>
 </div>
 
 <div class="charger-plus">

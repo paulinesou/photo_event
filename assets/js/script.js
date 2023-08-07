@@ -32,3 +32,15 @@ champRef.value = contenuTextuel;
 
 // LIGHTBOX
 
+const lightbox = document.getElementById("lightbox");
+const iconEcran = document.getElementById("icon-plein-ecran");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+iconEcran.onclick = function(){
+    lightbox.style.display = 'block';
+}
+
+lightboxClose.onclick = function(){
+    lightbox.style.display = 'none';
+}
+

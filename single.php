@@ -49,7 +49,18 @@
                 // 3. On lance la boucle !
                 if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
-                    <a class="" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <div class="single-post">
+                        <!-- Div contenant mon image -->
+                        <div class="single-similaire">
+                            <a class="" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                        </div>
+                            <!-- Div contenant les éléments au survol -->
+                        <div class="image-contenu">
+                            <i id="icon-plein-ecran" class="fa-solid fa-expand"></i>
+                            <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+                        </div>
+                    </div>
+                    
 
                 <?php endwhile;
                 endif;
@@ -58,7 +69,7 @@
                 wp_reset_postdata(); ?>
                 </div>
                 <div class="plus-photo">
-                    <button class="btn btn-photo">Toutes les photos</button>
+                    <a href="<?php echo home_url( '/#home-filtre' ); ?>"><button class="btn btn-photo">Toutes les photos</button></a>
                 </div>
             </div>
         <?php endwhile; ?>
