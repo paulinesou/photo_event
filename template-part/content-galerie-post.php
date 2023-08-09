@@ -8,10 +8,10 @@
 
         <!-- Div contenant les éléments au survol -->
         <div class="image-contenu">
-        <i id="icon-plein-ecran" class="fa-solid fa-expand"></i>
-        <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
-        <p class="contenu-ref"><?php the_field('reference'); ?></p>
-        <p class="contenu-categorie"><?php the_field('categorie'); ?></p>
+            <i class="icon-plein-ecran fa-solid fa-expand"></i>
+            <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+            <p class="contenu-ref"><?php the_field('reference'); ?></p>
+            <p class="contenu-categorie"><?php the_field('categorie'); ?></p>
         </div>
 
     <?php endif; ?>

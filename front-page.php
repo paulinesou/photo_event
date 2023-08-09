@@ -59,8 +59,10 @@
         </div>
 </div>
 
+<!-- Début pagination -->
+
 <div class="charger-plus">
-    <button class="btn btn-charger-plus">Charger plus</button>
+    <button id="btn-charger-plus" class="btn">Charger plus</button>
 </div>
 
 <?php get_footer(); ?>

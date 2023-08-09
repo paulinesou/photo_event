@@ -1,3 +1,25 @@
+// LIGHTBOX
+
+const lightbox = document.getElementById("lightbox");
+const lightboxClose = document.querySelector(".lightbox-close");
+const iconsEcran = document.querySelectorAll(".icon-plein-ecran");
+
+// Fonction à exécuter lorsque l'icône est cliquée
+function afficherAlerte() {
+    lightbox.style.display = 'block';
+    console.log("Open Lightbox");
+}
+
+// Ajout d'un gestionnaire d'événement pour le clic à chaque icône
+iconsEcran.forEach(icon => {
+    icon.addEventListener("click", afficherAlerte);
+});
+
+// Fermeture de la lightbox
+lightboxClose.addEventListener("click", function(){
+  lightbox.style.display = "none";
+});
+
 // MODALE CONTACT MENU
 
 const modal = document.getElementById("modal");
@@ -30,17 +52,6 @@ const champRef = document.getElementById('ref');
 
 champRef.value = contenuTextuel;
 
-// LIGHTBOX
+// CHARGER PLUS 
 
-const lightbox = document.getElementById("lightbox");
-const iconEcran = document.getElementById("icon-plein-ecran");
-const lightboxClose = document.querySelector(".lightbox-close");
-
-iconEcran.onclick = function(){
-    lightbox.style.display = 'block';
-}
-
-lightboxClose.onclick = function(){
-    lightbox.style.display = 'none';
-}
 

@@ -18,7 +18,17 @@
                     <?php the_field('annee'); ?></p>
                 </div>
                 <div class="img-post">
-                    <?php the_post_thumbnail(); ?>
+                        <!-- Div contenant mon image -->
+                        <div class="single-similaire">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                            <!-- Div contenant les éléments au survol -->
+                        <!-- <div class="image-contenu">
+                            <i id="icon-plein-ecran" class="fa-solid fa-expand"></i>
+                            <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+                        </div> -->
+                    </div>
+                    
                 </div>
             </article>
             <div class="info-next-prev">
@@ -60,7 +70,6 @@
                             <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
                         </div>
                     </div>
-                    
 
                 <?php endwhile;
                 endif;

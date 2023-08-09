@@ -157,7 +157,7 @@ select{
 	right: 15px;
 }
 
-#icon-plein-ecran{
+.icon-plein-ecran{
 	color: white;
 	position: absolute;
 	right: 15px;
@@ -165,7 +165,7 @@ select{
 	cursor: pointer;
 }
 
-#icon-plein-ecran::before{
+.icon-plein-ecran::before{
 	font-size: 30px;
 }
 
@@ -316,6 +316,11 @@ article{
 	align-items: end;
 }
 
+.img-post:hover .image-contenu{
+	background: rgba(0,0,0,0.5);
+	display: block;
+}
+
 /* .img-post img{
 	object-fit: contain;
 	width: 100%;
@@ -351,8 +356,10 @@ article{
 .arrows{
 	display: flex;
 	justify-content: space-between;
-	align-items: end;
+	/* align-items: end; */
 	width: 20%;
+	margin-right: 10px;
+	margin-top: 10px;
 }
 
 .img-arrow{
@@ -360,12 +367,24 @@ article{
 	/* height: 70px;
 	display: flex;
 	justify-content: center; */
+	margin-right: 45px;
+	margin-top: 10px;
 }
 
 .img-arrow img{
 	object-fit: contain;
 	width: 100%;
 	max-height: 70px;
+	opacity: 0;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+
+.next:hover .img-arrow img{
+	opacity: 1;
 }
 
 .info-similaire{

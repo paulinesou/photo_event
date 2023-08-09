@@ -1,6 +1,6 @@
 <div class="nextandprev">
     <div class="img-arrow">
-        <a class="image-next-prev" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <a class="image-next-prev" href="<?php the_permalink(); ?>"><?php the_post_thumbnail();?></a>
     </div>
     <div class="arrows">
         <div class="next">
