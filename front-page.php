@@ -51,12 +51,12 @@
         <button class="lightbox-prev">&larr; Précédente</button>
     </div>
     <div class="lightbox-container">
-        <a class="img-lightbox" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+        <a class="img-lightbox" href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a>
     </div>
     <div class="lightbox-info">
             <p class="lightbox-ref"><?php the_field('reference'); ?></p>
             <p class="lightbox-categorie"><?php the_field('categorie'); ?></p>
-        </div>
+    </div>
 </div>
 
 <!-- Début pagination -->

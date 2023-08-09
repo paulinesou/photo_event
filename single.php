@@ -66,8 +66,26 @@
                         </div>
                             <!-- Div contenant les éléments au survol -->
                         <div class="image-contenu">
-                            <i id="icon-plein-ecran" class="fa-solid fa-expand"></i>
+                            <i class="icon-plein-ecran fa-solid fa-expand"></i>
                             <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+                        </div>
+                    </div>
+
+                    <!-- Div contenant ma lightbox -->
+                    <div id="lightbox">
+                        <span class="lightbox-close">&times;</span>
+                        <div class="">
+                            <button class="lightbox-next">Suivante &rarr;</button>
+                        </div>
+                        <div class="">
+                            <button class="lightbox-prev">&larr; Précédente</button>
+                        </div>
+                        <div class="lightbox-container">
+                            <a class="img-lightbox" href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a>
+                        </div>
+                        <div class="lightbox-info">
+                            <p class="lightbox-ref"><?php the_field('reference'); ?></p>
+                            <p class="lightbox-categorie"><?php the_field('categorie'); ?></p>
                         </div>
                     </div>
 
@@ -77,6 +95,7 @@
                 // 4. On réinitialise à la requête principale (important)
                 wp_reset_postdata(); ?>
                 </div>
+                
                 <div class="plus-photo">
                     <a href="<?php echo home_url( '/#home-filtre' ); ?>"><button class="btn btn-photo">Toutes les photos</button></a>
                 </div>

@@ -7,7 +7,6 @@ const iconsEcran = document.querySelectorAll(".icon-plein-ecran");
 // Fonction à exécuter lorsque l'icône est cliquée
 function afficherAlerte() {
     lightbox.style.display = 'block';
-    console.log("Open Lightbox");
 }
 
 // Ajout d'un gestionnaire d'événement pour le clic à chaque icône
