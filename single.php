@@ -23,10 +23,9 @@
                             <?php the_post_thumbnail(); ?>
                         </div>
                             <!-- Div contenant les éléments au survol -->
-                        <!-- <div class="image-contenu">
-                            <i id="icon-plein-ecran" class="fa-solid fa-expand"></i>
-                            <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
-                        </div> -->
+                        <div class="single-image-contenu">
+                            <i class="icon-plein-ecran fa-solid fa-expand"></i>
+                        </div>
                     </div>
                     
                 </div>

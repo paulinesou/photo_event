@@ -41,6 +41,40 @@
     <?php endif; ?>
 </div>
 
+<!-- Pagination -->
+<?php 
+$publications = new WP_Query([
+  'post_type' => 'any',
+  'posts_per_page' => 12,
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'paged' => 1,
+]);
+?>
+
+<?php if($publications->have_posts()): ?>
+  <div class="galerie">
+    <?php 
+      while ($publications->have_posts()): $publications->the_post();
+      get_template_part('template-part/content', 'galerie-post');
+      endwhile;
+    ?>
+  </div>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+
+<!-- <div class="charger-plus">
+  <a href="#!" class="btn" id="btn-charger-plus">Charger plus</a>
+</div> -->
+
+<div class="charger-plus">
+    <button id="btn-charger-plus" class="btn">Charger plus</button>
+</div>
+
+<!-- <div class="btn__wrapper">
+  <a href="#!" class="btn btn__primary" id="load-more">Load more</a>
+</div> -->
+
 <!-- Div contenant ma lightbox -->
 <div id="lightbox">
     <span class="lightbox-close">&times;</span>
@@ -50,19 +84,13 @@
     <div class="">
         <button class="lightbox-prev">&larr; Précédente</button>
     </div>
-    <div class="lightbox-container">
+    <div class="lightbox-img">
         <a class="img-lightbox" href="<?php the_permalink();?>"><?php the_post_thumbnail();?></a>
     </div>
     <div class="lightbox-info">
             <p class="lightbox-ref"><?php the_field('reference'); ?></p>
             <p class="lightbox-categorie"><?php the_field('categorie'); ?></p>
     </div>
-</div>
-
-<!-- Début pagination -->
-
-<div class="charger-plus">
-    <button id="btn-charger-plus" class="btn">Charger plus</button>
 </div>
 
 <?php get_footer(); ?>
