@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let iconClicked = event.target;
     let relValue = iconClicked.getAttribute("rel");
     let parentImageGalerie = event.target.parentElement.parentElement; // Remonter deux niveaux parents
+    console.log(parentImageGalerie);
 
     // Trouver l'élément img à l'intérieur de l'élément parent
     let  imageElement = parentImageGalerie.querySelector("img");
@@ -23,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Injecter la valeur de 'rel' dans l'attribut 'src' de l'image de la lightbox
     lightboxImage.setAttribute("src", srcValue);
-
   }
 
   // Ajout d'un gestionnaire d'événement pour le clic à chaque icône
@@ -34,6 +34,30 @@ document.addEventListener("DOMContentLoaded", function() {
     lightboxClose.addEventListener("click", function(){
       lightbox.style.display = "none";
     });
+});
+
+// CHARGER PLUS 
+
+let currentPage = 1;
+jQuery('#btn-charger-plus').on('click', function() {
+  currentPage++; // Do currentPage + 1, because we want to load the next page
+  console.log('hello');
+
+  jQuery.ajax({
+    type: 'POST',
+    url: 'wp-admin/admin-ajax.php',
+    dataType: 'json',
+    data: {
+      action: 'weichie_load_more',
+      paged: currentPage,
+    },
+    success: function (res) {
+      // if(paged >= res.max) {
+      //   $('#load-more').hide();
+      // }
+      jQuery('.galerie').append(res.html);
+    }
+  });
 });
 
 // MODALE CONTACT MENU
@@ -68,22 +92,9 @@ const champRef = document.getElementById('ref');
 
 champRef.value = contenuTextuel;
 
-// CHARGER PLUS 
 
-// let currentPage = 1;
-// $('#btn-charger-plus').on('click', function() {
-//   currentPage++; // Do currentPage + 1, because we want to load the next page
-//   $.ajax({
-//     type: 'POST',
-//     url: '/wp-admin/admin-ajax.php',
-//     dataType: 'html',
-//     data: {
-//       action: 'weichie_load_more',
-//       paged: currentPage,
-//     },
-//     success: function (res) {
-//       $('.publication-list').append(res);
-//     }
-//   });
-// });
+
+// FILTRES
+
+
 

@@ -1,3 +1,4 @@
+<div class="galerie-post">
 <article>
     <?php if (get_post_type() === 'galerie') : ?>
 
@@ -16,3 +17,4 @@
 
     <?php endif; ?>
 </article>
+    </div>
