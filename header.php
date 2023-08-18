@@ -22,7 +22,10 @@
             'class' => 'header_menu', // class personnalisée
             ]);
             ?>
+            <!-- Integration de mon template menu burger -->
+            <?php get_template_part( 'template-part/menu','burger' ); ?>
         </div>
+
         <!-- Condition d'affichage de l'image de mon header -->
         <?php if (is_front_page()) :?>
         <div class="img-text-header">

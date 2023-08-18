@@ -4,23 +4,15 @@
 
 function photoevent_add_theme_scripts()
 {
-    // css
-    wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0');
+  // css
+  wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0');
 
-    // js
-    // wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', '', null, true);
-        // Déclarer jQuery
-        wp_enqueue_script('jquery' );
+  // Déclarer jQuery
+  wp_enqueue_script('jquery' );
     
-        // Déclarer le JS
-        wp_enqueue_script( 
-            'script', 
-            get_template_directory_uri() . '/assets/js/script.js', 
-            array( 'jquery' ), 
-            '1.0', 
-            true
-        );
-    
+  // Déclarer le JS
+  wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0', true);
+  wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array( 'jquery' ), '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'photoevent_add_theme_scripts');
@@ -48,7 +40,7 @@ add_theme_support( 'title-tag' );
   function weichie_load_more() {
     $ajaxposts = new WP_Query([
       'post_type' => 'galerie',
-      'posts_per_page' => 12,
+      'posts_per_page' => 6,
       'paged' => $_POST['paged'],
     ]);
   

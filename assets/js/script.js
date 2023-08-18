@@ -1,40 +1,21 @@
-// LIGHTBOX
+// MENU BURGER
 
-document.addEventListener("DOMContentLoaded", function() {
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = lightbox.querySelector(".img-lightbox img");
-    const lightboxClose = document.querySelector(".lightbox-close");
-    const iconsEcran = document.querySelectorAll(".icon-plein-ecran");
+var sidenav = document.getElementById("mySidenav");
+var openBtn = document.getElementById("openBtn");
+var closeBtn = document.getElementById("closeBtn");
 
-    // Fonction à exécuter lorsque n'importe quelle icône est cliquée
-  function afficherAlerte(event) {
-    lightbox.style.display = 'block';
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
 
-    // Récupérer la valeur de l'attribut 'rel' de l'icône cliquée
-    let iconClicked = event.target;
-    let relValue = iconClicked.getAttribute("rel");
-    let parentImageGalerie = event.target.parentElement.parentElement; // Remonter deux niveaux parents
-    console.log(parentImageGalerie);
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  sidenav.classList.add("active");
+}
 
-    // Trouver l'élément img à l'intérieur de l'élément parent
-    let  imageElement = parentImageGalerie.querySelector("img");
-    let srcValue = imageElement.getAttribute("src");
-    console.log("Valeur de rel :", relValue);
-    console.log("Valeur du src ;", srcValue);
-
-    // Injecter la valeur de 'rel' dans l'attribut 'src' de l'image de la lightbox
-    lightboxImage.setAttribute("src", srcValue);
-  }
-
-  // Ajout d'un gestionnaire d'événement pour le clic à chaque icône
-  iconsEcran.forEach(icon => {
-    icon.addEventListener("click", afficherAlerte);
-  });
-    // Fermeture de la lightbox
-    lightboxClose.addEventListener("click", function(){
-      lightbox.style.display = "none";
-    });
-});
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  sidenav.classList.remove("active");
+}
 
 // CHARGER PLUS 
 
@@ -52,13 +33,14 @@ jQuery('#btn-charger-plus').on('click', function() {
       paged: currentPage,
     },
     success: function (res) {
-      // if(paged >= res.max) {
-      //   $('#load-more').hide();
-      // }
       jQuery('.galerie').append(res.html);
     }
   });
 });
+
+// FILTRES
+
+
 
 // MODALE CONTACT MENU
 
@@ -77,9 +59,10 @@ window.onclick = function(event) {
     }
 }
 
-contactPost.onclick = function(){
+  contactPost.onclick = function(){
     modal.style.display = 'block';
 }
+
 
 // RECUPERER REFERENCE FORMULAIRE POST
 
@@ -91,10 +74,3 @@ const contenuTextuel = paragraph.textContent;
 const champRef = document.getElementById('ref');
 
 champRef.value = contenuTextuel;
-
-
-
-// FILTRES
-
-
-

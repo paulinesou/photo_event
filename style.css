@@ -72,6 +72,69 @@ ul{
 	top: 550px;
 }
 
+/* MENU BURGER */
+
+.sidenav {
+	display: none;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	background-color: #E00000;
+	transition: top 0.5s ease;
+	overflow: hidden;
+}
+  
+.sidenav a {
+	text-decoration: none;
+	font-size: 25px;
+	display: block;
+	transition: 0.3s;
+	color: white;
+	font-family: "space mono";
+}
+  
+.sidenav ul {
+	list-style-type: none;
+	text-align: center;
+}
+  
+/* Active class */
+.sidenav.active {
+	display: block;
+	animation: down 1s;
+	transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+  
+/* Close btn */
+.sidenav .close {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+}
+  
+/* Icône burger */
+.burger-icon span {
+	display: block;
+	width: 35px;
+	height: 5px;
+	background-color: black;
+	margin: 6px 0;
+}
+
+@keyframes down{
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
 /* FILTRE */
 
 .filtre{
@@ -112,13 +175,6 @@ select{
 	gap: 10px;
 	margin-top: 40px;
 }
-
-/* .galerie-post{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-} */
 
 .img-galerie img{
 	object-fit: cover;
@@ -201,19 +257,20 @@ article{
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
+	bottom: 0;
+	right: 0;
 	background: rgba(0,0,0,0.8);
-	min-height: 100vh;
-	height: 100%;
-	z-index: 10;
+	background-size: contain;
+	background-position: center;
 }
 
 .lightbox-img{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	margin-top: 50px;
+	align-items: center;
+	margin-left: 50px;
+	margin-right: 50px;
+	min-height: 100vh;
 }
 
 .lightbox-img img{
@@ -228,8 +285,7 @@ article{
 	color: white;
 	border: none;
 	position: fixed;
-	top: 0;
-	height: 100%;
+	top: 50%;
 	cursor: pointer;
 	font-family: "space mono";
 }
@@ -326,7 +382,9 @@ article{
 }
 
 .img-post{
+	position: relative;
 	width: 50%;
+	height: 100%;
 	display: flex;
 	align-items: end;
 }
@@ -338,9 +396,8 @@ article{
 
 .single-image-contenu{
 	position: absolute;
-	width: 50%;
-	/* height: 100%; */
-	min-height: 512px;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	display: none;
@@ -531,4 +588,22 @@ input{
 	gap: 40px;
 	border-top: solid 1px;
 	padding-top: 5px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 850px) {
+
+	.sidenav.active{
+		right: auto;
+		width: 100vw;
+	}
+
+	.burger-icon span{
+		top: 20px;
+	}
+
+	.sidenav ul{
+		top: 30px;
+	}
 }

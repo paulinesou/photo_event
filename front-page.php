@@ -37,8 +37,7 @@
     <?php
     $galeries = new WP_Query([
         'post_type' => 'galerie',
-        'posts_per_page' => 12,
-        // 'posts_per_page' => 2,
+        'posts_per_page' => 6,
         'paged' => 1,
     ]);
     
@@ -57,28 +56,6 @@
 
 <div class="charger-plus">
   <a href="#!" class="btn" id="btn-charger-plus">Charger plus</a>
-</div>
-
-<!-- <div class="btn__wrapper">
-  <a href="#!" class="btn btn__primary" id="load-more">Load more</a>
-</div> -->
-
-<!-- Div contenant ma lightbox -->
-<div id="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <div class="">
-        <button class="lightbox-next">Suivante &rarr;</button>
-    </div>
-    <div class="">
-        <button class="lightbox-prev">&larr; Précédente</button>
-    </div>
-    <div class="lightbox-img">
-        <a class="img-lightbox" href="<?php the_permalink();?>"><img src=""></a>
-    </div>
-    <div class="lightbox-info">
-            <p class="lightbox-ref"></p>
-            <p class="lightbox-categorie"></p>
-    </div>
 </div>
 
 <?php get_footer(); ?>
