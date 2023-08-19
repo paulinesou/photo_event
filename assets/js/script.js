@@ -1,20 +1,20 @@
 // MENU BURGER
 
-var sidenav = document.getElementById("mySidenav");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
+var sidenavBurger = document.getElementById("myMenuBurger");
+var openBtnBurger = document.getElementById("openBtnBurger");
+var closeBtnBurger = document.getElementById("closeBtnBurger");
 
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
+openBtnBurger.onclick = openNav;
+closeBtnBurger.onclick = closeNav;
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
-  sidenav.classList.add("active");
+  sidenavBurger.classList.add("active");
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  sidenav.classList.remove("active");
+  sidenavBurger.classList.remove("active");
 }
 
 // CHARGER PLUS 

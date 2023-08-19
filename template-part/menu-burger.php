@@ -1,12 +1,12 @@
-<div id="mySidenav" class="sidenav">
-  <a id="closeBtn" href="#" class="close">&times;</a>
+<div id="myMenuBurger" class="menuBurger">
+  <a id="closeBtnBurger" href="#" class="closeBurger">&times;</a>
   <ul>
-    <li><a href="#">Accueil</a></li>
-    <li><a href="#">A propos</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a class="" href="#">Accueil</a></li>
+    <li><a class="" href="#">A propos</a></li>
+    <li><a class="" href="#">Contact</a></li>
 </div>
 
-<a href="#" id="openBtn">
+<a href="#" id="openBtnBurger">
   <span class="burger-icon">
     <span></span>
     <span></span>

@@ -74,8 +74,8 @@ ul{
 
 /* MENU BURGER */
 
-.sidenav {
-	display: none;
+.menuBurger {
+	display: block;
 	height: 100vh;
 	width: 100%;
 	position: fixed;
@@ -86,7 +86,7 @@ ul{
 	overflow: hidden;
 }
   
-.sidenav a {
+.menuBurger a {
 	text-decoration: none;
 	font-size: 25px;
 	display: block;
@@ -95,20 +95,29 @@ ul{
 	font-family: "space mono";
 }
   
-.sidenav ul {
+.menuBurger ul {
 	list-style-type: none;
 	text-align: center;
 }
+
+#openBtnBurger{
+	display: none;
+}
   
 /* Active class */
-.sidenav.active {
+
+#myMenuBurger{
+	display: none;
+}
+
+#myMenuBurger.active {
 	display: block;
 	animation: down 1s;
 	transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
   
 /* Close btn */
-.sidenav .close {
+.menuBurger .closeBurger {
 	position: absolute;
 	top: 0;
 	right: 25px;
@@ -605,5 +614,13 @@ input{
 
 	.sidenav ul{
 		top: 30px;
+	}
+
+	#openBtnBurger{
+		display: block;
+	}
+
+	#menu-home{
+		display: none;
 	}
 }
