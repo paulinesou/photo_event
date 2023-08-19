@@ -603,6 +603,7 @@ input{
 
 @media screen and (max-width: 850px) {
 
+	/* Nav + menu burger */
 	.sidenav.active{
 		right: auto;
 		width: 100vw;
@@ -622,5 +623,40 @@ input{
 
 	#menu-home{
 		display: none;
+	}
+
+	/* Single page */
+	.img-post,
+	.infos{
+		width: 100%;
+	}
+
+	.galerie-single-post{
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.info-next-prev{
+		flex-direction: column;
+	}
+
+	.info-compl{
+		flex-direction: column;
+		width: 100%;
+		justify-content: inherit;
+	}
+
+	.nextandprev{
+		display: none;
+	}
+
+	.info-similaire p{
+		text-align: center;
+		margin-left: auto;
+		font-size: 25px;
+	}
+
+	.img-article-similaire{
+		flex-direction: column;
 	}
 }
