@@ -169,7 +169,7 @@ select{
 	justify-content: space-between;
 }
 
-.filtre-tri{
+.filter-date{
 	width: 50%;
 	display: flex;
 	justify-content: end;

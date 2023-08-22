@@ -40,7 +40,33 @@ jQuery('#btn-charger-plus').on('click', function() {
 
 // FILTRES
 
+// exemple david
+function initFilters() {
+  const categoryFilter = document.getElementById('categories-select');
+  const formatFilter = document.getElementById('filter-select');
+  const dateFilter = document.getElementById('sort-dates');
 
+  const filters = {
+      category: '',
+      format: '',
+      sort: ''
+  };
+
+  function updateFiltersAndLoad() {
+      filters.category = categoryFilter.value;
+      filters.format = formatFilter.value;
+      filters.sort = dateFilter.value;
+      loadPhotos(filters);
+  }
+
+  categoryFilter.addEventListener('change', updateFiltersAndLoad);
+  formatFilter.addEventListener('change', updateFiltersAndLoad);
+  dateFilter.addEventListener('change', updateFiltersAndLoad);
+
+  loadPhotos(filters);
+  
+}
+// fin exemple david
 
 // MODALE CONTACT MENU
 

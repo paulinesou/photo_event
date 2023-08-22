@@ -70,3 +70,4 @@ add_theme_support( 'title-tag' );
   add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
 
 // FILTRE
+
