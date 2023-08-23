@@ -25,9 +25,9 @@
 <section id="home-filtre" class="filtre">
     <div class="filtre-cat-form">
         <form id="filter-cat" class="js-filter-form">
-            <label for="categorie" class="letters-transform ">Catégories</label>
+            <label for="categorie" class="letters-transform "></label>
             <select name="categories" id="categorie" class="filters_text">
-                <option value="">Toutes les photos</option>
+                <option value="">Catégories</option>
                 <?php
                 if (!empty($terms_pic_category) && !is_wp_error($terms_pic_category)) {
                     foreach ($terms_pic_category as $individual_pic_cat) {
@@ -40,9 +40,9 @@
         </form>
     
         <form id="filter-formats">
-            <label for="format" class="letters-transform">Formats</label>
+            <label for="format" class="letters-transform"></label>
             <select name="format" id="format" class="filters_text">
-                <option value="">Toutes les photos</option>
+                <option value="">Formats</option>
                 <?php
                 if (!empty($terms_pic_formats) && !is_wp_error($terms_pic_formats)) {
                     foreach ($terms_pic_formats as $pic_format) {
@@ -55,17 +55,19 @@
 
         </form>
     </div>
-        
-    <form id="filter-date">
-        <div class="filtre-tri">
-            <label for="sort-by" class="letters-transform">Trier par</label>
-            <select name="sort" id="sort-dates" class="filters_text">
-                <option value=""></option>
-                <option value="DESC">Nouveautés</option>
-                <option value="ASC">Les plus anciens</option>
-            </select>
-        </div>
-    </form>
+    
+    <div class="filtre-dates">
+        <form id="filter-date">
+            <div class="filtre-tri">
+                <label for="sort-by" class="letters-transform"></label>
+                <select name="sort" id="sort-dates" class="filters_text">
+                    <option value="">Trier par</option>
+                    <option value="DESC">Nouveautés</option>
+                    <option value="ASC">Les plus anciens</option>
+                </select>
+            </div>
+        </form>
+    </div>
 </section>
 
 <!-- Div contenant ma galerie photo -->

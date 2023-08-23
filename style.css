@@ -164,10 +164,22 @@ select{
 	font-family: "space mono";
 }
 
+.filter-formats{
+	display: flex;
+	justify-content: end;
+	flex-direction: column;
+}
+
 .filtre-cat-form{
 	width: 50%;
 	display: flex;
 	justify-content: space-between;
+}
+
+.filtre-dates{
+	display: flex;
+	justify-content: end;
+	width: 50%;
 }
 
 .filter-date{
@@ -624,6 +636,16 @@ input{
 
 	#menu-home{
 		display: none;
+	}
+
+	/* Filtres */
+	.filtre{
+		margin-left: 30px;
+		margin-right: 0;
+	}
+
+	.filtre-cat-form{
+		display: block;
 	}
 
 	/* Single page */
