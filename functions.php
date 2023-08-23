@@ -113,13 +113,13 @@ function my_filter_function() {
 function filter() {
 
         /** Pour test et débugage */
-        echo "orderDirection : ".$_POST['orderDirection']."<br>";
-        echo "page : ".$_POST['page']."<br>";
-        echo "categorieSelection : ".$_POST['categorieSelection']."<br>";
-        echo "categorieTaxonomie : ".$_POST['categorieTaxonomie']."<br>";
-        echo "formatSelection : ".$_POST['formatSelection']."<br>";
-        echo "formatTaxonomie : ".$_POST['formatTaxonomie']."<br>";
-        echo "orderDirection : ".$_POST['orderDirection']."<br>";
+        // echo "orderDirection : ".$_POST['orderDirection']."<br>";
+        // echo "page : ".$_POST['page']."<br>";
+        // echo "categorieSelection : ".$_POST['categorieSelection']."<br>";
+        // echo "categorieTaxonomie : ".$_POST['categorieTaxonomie']."<br>";
+        // echo "formatSelection : ".$_POST['formatSelection']."<br>";
+        // echo "formatTaxonomie : ".$_POST['formatTaxonomie']."<br>";
+        // echo "orderDirection : ".$_POST['orderDirection']."<br>";
         // Pour test et débugage
 
         if($_POST['categorieSelection']==""){
@@ -135,7 +135,7 @@ function filter() {
         'post_type' => 'galerie', // Type de publication personnalisé
         'orderby' => 'date', // Ordonner par date
         'order' => $_POST['orderDirection'], // Direction de tri (reçue depuis la requête AJAX)
-        'posts_per_page' => 4, // Nombre d'articles à afficher par page
+        'posts_per_page' => 6, // Nombre d'articles à afficher par page
         'paged' => $_POST['page'], // Page actuelle (reçue depuis la requête AJAX)
         'tax_query' =>
             array(
@@ -177,8 +177,21 @@ function afficherImages($galerie, $exit) {
     if($galerie->have_posts()) {
         while ($galerie->have_posts()) { ?>
         <?php $galerie->the_post(); ?>
-            <!-- // Mettre ici ta structure -->
-          <img class="img-medium" src="<?php echo the_post_thumbnail_url(); ?>" />
+        <div class="galerie-post">
+          <article>
+            <!-- Div contenant mon image -->
+            <div class="image-galerie">
+              <a class="img-galerie" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+            </div>
+            <!-- Div contenant les éléments au survol -->
+            <div class="image-contenu">
+              <i class="icon-plein-ecran fa-solid fa-expand"></i>
+              <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+              <p class="contenu-ref"><?php the_field('reference'); ?></p>
+              <p class="contenu-categorie"><?php the_field('categorie'); ?></p>
+            </div>
+          </article>
+        </div>
                     
           <?php
         }
