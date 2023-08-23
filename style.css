@@ -655,7 +655,7 @@ input{
 	}
 
 	.galerie-single-post{
-		flex-direction: column;
+		flex-direction: column-reverse;
 		width: 100%;
 	}
 
@@ -667,6 +667,10 @@ input{
 		flex-direction: column;
 		width: 100%;
 		justify-content: inherit;
+	}
+
+	.info-compl p{
+		margin-left: 0;
 	}
 
 	.nextandprev{
