@@ -119,8 +119,8 @@ ul{
 /* Close btn */
 .menuBurger .closeBurger {
 	position: absolute;
-	top: 0;
-	right: 25px;
+	top: 50px;
+	right: 150px;
 	font-size: 36px;
 }
   
@@ -143,6 +143,7 @@ ul{
 		transform: translate3d(0, 0, 0);
 	}
 }
+
 
 /* FILTRE */
 
@@ -468,7 +469,7 @@ article{
 	object-fit: contain;
 	width: 100%;
 	max-height: 70px;
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 400ms ease;
 	-moz-transition: all 400ms ease;
 	-ms-transition: all 400ms ease;

@@ -71,3 +71,123 @@ add_theme_support( 'title-tag' );
 
 // FILTRE
 
+add_action('wp_ajax_my_filter', 'my_filter_function'); // Utilisez 'wp_ajax' pour les utilisateurs connectés
+add_action('wp_ajax_nopriv_my_filter', 'my_filter_function'); // Utilisez 'wp_ajax_nopriv' pour les utilisateurs non connectés
+
+function my_filter_function() {
+    if (isset($_GET['category'])) {
+        global $wpdb;
+        
+        $category_filter = sanitize_text_field($_GET['category']);
+        
+        $query_args = array(
+            'post_type' => 'galerie',
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                array(
+                    'key' => 'categorie',
+                    'value' => $category_filter,
+                    'compare' => '=',
+                ),
+            ),
+        );
+
+        $query = new WP_Query($query_args);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                echo '<h2>' . get_the_title() . '</h2>';
+                // ...
+            }
+            wp_reset_postdata();
+        } else {
+            echo 'Aucun article trouvé.';
+        }
+
+        die();
+    }
+}
+
+// Fonction qui va effectuer la requête AJAX pour filtrer les résultats
+function filter() {
+
+        /** Pour test et débugage */
+        echo "orderDirection : ".$_POST['orderDirection']."<br>";
+        echo "page : ".$_POST['page']."<br>";
+        echo "categorieSelection : ".$_POST['categorieSelection']."<br>";
+        echo "categorieTaxonomie : ".$_POST['categorieTaxonomie']."<br>";
+        echo "formatSelection : ".$_POST['formatSelection']."<br>";
+        echo "formatTaxonomie : ".$_POST['formatTaxonomie']."<br>";
+        echo "orderDirection : ".$_POST['orderDirection']."<br>";
+        // Pour test et débugage
+
+        if($_POST['categorieSelection']==""){
+          $_POST['categorieSelection']="all";
+        }
+        if($_POST['formatSelection']==""){
+          $_POST['formatSelection']="all";
+        }
+
+    // Crée une nouvelle requête WP_Query en fonction des paramètres reçus par la requête AJAX
+    $requeteAjax = new WP_Query(array(
+
+        'post_type' => 'galerie', // Type de publication personnalisé
+        'orderby' => 'date', // Ordonner par date
+        'order' => $_POST['orderDirection'], // Direction de tri (reçue depuis la requête AJAX)
+        'posts_per_page' => 4, // Nombre d'articles à afficher par page
+        'paged' => $_POST['page'], // Page actuelle (reçue depuis la requête AJAX)
+        'tax_query' =>
+            array(
+                'relation' => 'AND', // Relation entre les clauses taxonomiques (ET)
+                // Si la catégorie n'est pas "all", ajoute une clause de taxonomie pour la catégorie
+                $_POST['categorieSelection'] != "all" ?
+                    array(
+                        'taxonomy' => $_POST['categorieTaxonomie'], // Taxonomie pour la catégorie
+                        'field' => 'slug', // Comparaison basée sur le slug
+                        'terms' => $_POST['categorieSelection'], // Valeur sélectionnée pour la catégorie
+                    )
+                : '',
+                // Si le format n'est pas "all", ajoute une clause de taxonomie pour le format
+                $_POST['formatSelection'] != "all" ?
+                    array(
+                        'taxonomy' => $_POST['formatTaxonomie'], // Taxonomie pour le format
+                        'field' => 'slug', // Comparaison basée sur le slug
+                        'terms' => $_POST['formatSelection'], // Valeur sélectionnée pour le format
+                    )
+                : '',
+            )
+        )
+    );
+
+    // Appelle la fonction 'afficherImages' avec la requête AJAX et un booléen 'true'
+    afficherImages($requeteAjax, true);
+}
+
+// Ajoute l'action 'wp_ajax_nopriv_filter' pour les utilisateurs non connectés
+add_action('wp_ajax_nopriv_filter', 'filter');
+
+// Ajoute l'action 'wp_ajax_filter' pour les utilisateurs connectés
+add_action('wp_ajax_filter', 'filter');
+
+function afficherImages($galerie, $exit) {
+
+  // echo "<p>ici ici</p>";
+  // var_dump($galerie);
+    if($galerie->have_posts()) {
+        while ($galerie->have_posts()) { ?>
+        <?php $galerie->the_post(); ?>
+            <!-- // Mettre ici ta structure -->
+          <img class="img-medium" src="<?php echo the_post_thumbnail_url(); ?>" />
+                    
+          <?php
+        }
+    }
+    else {
+        echo "";
+    }
+    wp_reset_postdata();
+    if ($exit) {
+        exit(); 
+    }
+}
