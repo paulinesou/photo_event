@@ -17,7 +17,7 @@ function photoevent_add_theme_scripts()
 
 add_action('wp_enqueue_scripts', 'photoevent_add_theme_scripts');
 
-// Menu
+// Déclaration des Menus
 
 function photoevent_register_menus()
 {
@@ -172,8 +172,6 @@ add_action('wp_ajax_filter', 'filter');
 
 function afficherImages($galerie, $exit) {
 
-  // echo "<p>ici ici</p>";
-  // var_dump($galerie);
     if($galerie->have_posts()) {
         while ($galerie->have_posts()) { ?>
         <?php $galerie->the_post(); ?>
@@ -191,8 +189,7 @@ function afficherImages($galerie, $exit) {
               <p class="contenu-categorie"><?php the_field('categorie'); ?></p>
             </div>
           </article>
-        </div>
-                    
+        </div>        
           <?php
         }
     }

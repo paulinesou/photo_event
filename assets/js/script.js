@@ -21,7 +21,7 @@ function closeNav() {
 
 let currentPage = 1;
 jQuery('#btn-charger-plus').on('click', function() {
-  currentPage++; // Do currentPage + 1, because we want to load the next page
+  currentPage++; 
   console.log('hello');
 
   jQuery.ajax({
@@ -46,8 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Gestion du formulaire de filtrage
   selectElements.forEach(function(selectElement) {
       selectElement.addEventListener('change', function() {
-
-          // alert("ça marche");
 
           pageActuelle = 1;
           ajaxRequest(false); // Effectue une requête AJAX pour filtrer les images
