@@ -9,11 +9,13 @@ closeBtnBurger.onclick = closeNav;
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
+  document.body.style.overflow = 'hidden';
   sidenavBurger.classList.add("active");
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
+  document.body.style.overflow = 'auto';
   sidenavBurger.classList.remove("active");
 }
 
@@ -55,9 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Fonction pour effectuer une requête AJAX et mettre à jour la galerie de photos
   function ajaxRequest(chargerPlus) {
 
-      // Affiche une alerte pour indiquer que la fonction AJAX a été déclenchée
-      // alert("ajax fonction");
-
       // Sélectionne l'élément avec l'ID 'categories'
       var categorie = jQuery('#categorie');
 
@@ -79,13 +78,13 @@ document.addEventListener('DOMContentLoaded', function() {
       // Sélectionne l'élément avec l'ID 'ordre' et récupère la valeur sélectionnée
       var ordre = jQuery('#sort-dates').find('option:selected').val();
 
-      console.log("categorie : "+categorie);
-      console.log("categorieTaxonomie : "+categorieTaxonomie);
-      console.log("categorieSelection : "+categorieSelection);
-      console.log("format : "+format);
-      console.log("formatTaxonomie : "+formatTaxonomie);
-      console.log("formatSelection : "+formatSelection);
-      console.log("ordre : "+ordre);
+      // console.log("categorie : "+categorie);
+      // console.log("categorieTaxonomie : "+categorieTaxonomie);
+      // console.log("categorieSelection : "+categorieSelection);
+      // console.log("format : "+format);
+      // console.log("formatTaxonomie : "+formatTaxonomie);
+      // console.log("formatSelection : "+formatSelection);
+      // console.log("ordre : "+ordre);
 
       // Effectue une requête AJAX
       jQuery.ajax({
@@ -123,6 +122,44 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+// SURVOL NEXT-PREV SINGLE
+
+// Sélection des flèches .prev et .next
+const prevArrow = document.querySelector('.prev');
+const nextArrow = document.querySelector('.next');
+
+// Sélection des images .image-prev et .image-next
+const imagePrev = document.querySelector('.image-prev');
+const imageNext = document.querySelector('.image-next');
+
+if (nextArrow !== null) {
+  nextArrow.addEventListener('mouseenter', () => {
+    imageNext.style.opacity = '1';
+    imageNext.style.visibility = 'visible';
+});
+
+nextArrow.addEventListener('mouseleave', () => {
+    imageNext.style.opacity = '0';
+    imageNext.style.visibility = 'hidden';
+});
+}
+
+
+if (prevArrow !== null) {
+// Ajout des écouteurs d'événements pour le survol des flèches
+prevArrow.addEventListener('mouseenter', () => {
+    imagePrev.style.opacity = '1';
+    imagePrev.style.visibility = 'visible';
+});
+
+prevArrow.addEventListener('mouseleave', () => {
+    imagePrev.style.opacity = '0';
+    imagePrev.style.visibility = 'hidden';
+});
+}
+
+
 // MODALE CONTACT MENU
 
 const modal = document.getElementById("modal");
@@ -140,8 +177,10 @@ window.onclick = function(event) {
     }
 }
 
+if (contactPost !== null) {
   contactPost.onclick = function(){
     modal.style.display = 'block';
+}
 }
 
 
@@ -150,8 +189,18 @@ window.onclick = function(event) {
 // Étape 1 : Récupérer l'élément du DOM avec la classe "ref"
 const paragraph = document.querySelector('.ref-contact');
 
+if (paragraph !== null) {
 // Étape 2 : Récupérer le contenu textuel de l'élément
 const contenuTextuel = paragraph.textContent;
 const champRef = document.getElementById('ref');
 
 champRef.value = contenuTextuel;
+}
+
+// TOUS DROITS RESERVES
+
+const mention = document.getElementById("menu-item-359");
+
+mention.onclick = function(event){
+  event.preventDefault();
+}

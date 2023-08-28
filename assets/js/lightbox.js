@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const iconsEcran = document.querySelectorAll(".icon-plein-ecran");
 
     let srcValue ="";
-
-    const precedent = document.querySelector(".lightbox-prev");
-    const suivant = document.querySelector(".lightbox-next");
+    let refValue ="";
+    let catValue ="";
 
     // Fonction à exécuter lorsque n'importe quelle icône est cliquée
   function afficherAlerte(event) {
@@ -27,26 +26,29 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Valeur de rel :", relValue);
     console.log("Valeur du src ;", srcValue);
 
-    // Récupération Référence et Catégorie
+    // Trouver l'élément à l'intérieur de l'élément parent
+    let contenuRefElement = parentImageGalerie.querySelector(".contenu-ref");
+    let contenuCatElement = parentImageGalerie.querySelector(".contenu-categorie");
 
-    // let refElement = parentImageGalerie.querySelector("p");
-    // let refValue = refElement.getAttribute("lightbox-ref");
-    // lightboxImage.setAttribute("p", refValue);
+    // Récupérer le contenu textuel de l'élément .contenu-ref et .contenu-categorie
+    refValue = contenuRefElement.textContent;
+    catValue = contenuCatElement.textContent;
 
-    // let refImage = document.querySelector(".contenu-ref");
-    // let categorieImage = document.querySelector(".contenu-categorie");
-    // let paragrapheRefLightbox = lightbox.querySelector(".lightbox-ref");
-    // let paragrapheCatLightbox = lightbox.querySelector(".lightbox-categorie");
-    
-    // const contenuRefLightbox = refImage.textContent;
-    // paragrapheRefLightbox.value = contenuRefLightbox;
-
-    // const contenuCatLightbox = categorieImage.textContent;
-    // paragrapheCatLightbox.value = contenuCatLightbox;
-   
+    console.log("Valeur de rel :", relValue);
+    console.log("Valeur du src ;", srcValue);
+    console.log("Valeur de ref ;", refValue);
+    console.log("Valeur de cat ;", catValue);
 
     // Injecter la valeur de 'rel' dans l'attribut 'src' de l'image de la lightbox
     lightboxImage.setAttribute("src", srcValue);
+
+    // Trouver l'élément avec la classe .lightbox-ref et .lightbox-categorie
+    let lightboxRefElement = document.querySelector(".lightbox-ref");
+    let lightboxCatElement = document.querySelector(".lightbox-categorie")
+
+    // Injecter les contenus textuel dans l'élément .lightbox-ref
+    lightboxRefElement.textContent = refValue;
+    lightboxCatElement.textContent = catValue;
   }
 
   // Ajout d'un gestionnaire d'événement pour le clic à chaque icône
