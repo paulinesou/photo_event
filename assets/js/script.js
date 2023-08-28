@@ -1,20 +1,17 @@
 // MENU BURGER
 
 var sidenavBurger = document.getElementById("myMenuBurger");
-var openBtnBurger = document.getElementById("openBtnBurger");
-var closeBtnBurger = document.getElementById("closeBtnBurger");
+var openMenuBurger = document.getElementById("toggle")
 
-openBtnBurger.onclick = openNav;
-closeBtnBurger.onclick = closeNav;
+openMenuBurger.onclick = openBurger;
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
+
+function openBurger(){
   document.body.style.overflow = 'hidden';
   sidenavBurger.classList.add("active");
 }
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
+function closeBurger() {
   document.body.style.overflow = 'auto';
   sidenavBurger.classList.remove("active");
 }
@@ -159,7 +156,6 @@ prevArrow.addEventListener('mouseleave', () => {
 });
 }
 
-
 // MODALE CONTACT MENU
 
 const modal = document.getElementById("modal");
@@ -183,7 +179,6 @@ if (contactPost !== null) {
 }
 }
 
-
 // RECUPERER REFERENCE FORMULAIRE POST
 
 // Étape 1 : Récupérer l'élément du DOM avec la classe "ref"
@@ -204,3 +199,6 @@ const mention = document.getElementById("menu-item-359");
 mention.onclick = function(event){
   event.preventDefault();
 }
+
+// COLOR FILTRE
+

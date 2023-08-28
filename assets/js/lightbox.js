@@ -75,12 +75,19 @@ document.addEventListener("DOMContentLoaded", function() {
           var galeriePost = allGaleriePosts[i];
           var image = galeriePost.querySelector('.img-galerie img');
           var imageSrc = image.getAttribute('src');
+          var imageRef = galeriePost.querySelector('.contenu-ref')
+          var imageCat = galeriePost.querySelector('.contenu-categorie')
   
           // Vérifie si l'attribut 'src' de l'image correspond à la valeur de srcValue
-          if (imageSrc === srcValue) {
+          if (imageSrc === srcValue || imageRef === refValue || imageCat === catValue) {
               currentGaleriePost = galeriePost; // Définit l'élément galerie-post actuel
               break; // Sort de la boucle dès que l'élément est trouvé
           }
+
+        //   if (imageRef === refValue) {
+        //     currentGaleriePost = galeriePost;
+        //       break;
+        //   }
       }
   
       // Si nous avons trouvé l'élément .galerie-post actuel
@@ -95,15 +102,27 @@ document.addEventListener("DOMContentLoaded", function() {
   
               // Récupère la source de l'image précédente
               var prevImageSrc = prevImage.getAttribute('src');
+
+              // Récupère la référence  et la catégorie de l'image précédente
+              var prevImageRef = prevGaleriePost.querySelector('.contenu-ref');
+              var prevImageCat = prevGaleriePost.querySelector('.contenu-categorie');
   
               // Met à jour la valeur de srcValue avec la source de l'image précédente
               srcValue = prevImageSrc;
+
+              // Met à jour la valeur de refValue
+              refValue = prevImageRef;
+              catValue = prevImageCat;
   
               // Affiche un message dans la console avec la nouvelle valeur de srcValue
               console.log('Nouvelle valeur de srcValue :', srcValue);
+              console.log('Nouvelle valeur de refValue :', refValue);
+              console.log('Nouvelle valeur de catValue :', catValue);
   
-              // Met à jour la source de l'image dans la lightbox avec la nouvelle source
+              // Met à jour la source de l'image  et les infos dans la lightbox avec la nouvelle source
               lightboxImage.setAttribute("src", srcValue);
+              lightboxRefElement.textContent = refValue;
+              lightboxCatElement.textContent = catValue;
           } else {
               console.log("C'est la première image, il n'y a pas d'image précédente.");
           }
@@ -121,8 +140,10 @@ document.addEventListener("DOMContentLoaded", function() {
           var galeriePost = allGaleriePosts[i];
           var image = galeriePost.querySelector('.img-galerie img');
           var imageSrc = image.getAttribute('src');
+          var imageRef = galeriePost.querySelector('.contenu-ref')
+          var imageCat = galeriePost.querySelector('.contenu-categorie')
   
-          if (imageSrc === srcValue) {
+          if (imageSrc === srcValue || imageRef === refValue || imageCat === catValue) {
               currentGaleriePost = galeriePost;
               break;
           }
@@ -135,13 +156,20 @@ document.addEventListener("DOMContentLoaded", function() {
           if (nextGaleriePost) {
               var nextImage = nextGaleriePost.querySelector('.img-galerie img'); // Trouver l'image suivante
               var nextImageSrc = nextImage.getAttribute('src'); // Récupérer la source de l'image suivante
+              var nextImageRef = nextGaleriePost.querySelector('.contenu-ref');
+              var nextImageCat = nextGaleriePost.querySelector('.contenu-categorie');
   
               // Mettre à jour la valeur de srcValue avec la source de l'image suivante
               srcValue = nextImageSrc;
+              refValue = nextImageRef;
+              catValue = nextImageCat;
   
               // Faire autre chose avec la nouvelle valeur de srcValue
               console.log('Nouvelle valeur de srcValue :', srcValue);
               lightboxImage.setAttribute("src", srcValue);
+              lightboxRefElement.textContent = refValue;
+              lightboxCatElement.textContent = catValue;
+
           } else {
               console.log("C'est la dernière image, il n'y a pas d'image suivante.");
           }

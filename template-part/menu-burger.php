@@ -1,15 +1,17 @@
-<div id="myMenuBurger" class="menuBurger">
-  <a id="closeBtnBurger" href="#" class="closeBurger">&times;</a>
-  <ul>
-    <li><a class="" href="#">Accueil</a></li>
-    <li><a class="" href="#">A propos</a></li>
-    <li><a class="" href="#">Contact</a></li>
-</div>
+<!-- Bouton burger -->
+<input id="toggle" type="checkbox"></input>
 
-<a href="#" id="openBtnBurger">
-  <span class="burger-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-</a>
+<label for="toggle" class="hamburger">
+  <div class="top-bun"></div>
+  <div class="meat"></div>
+  <div class="bottom-bun"></div>
+</label>
+
+<!-- Div de mon menu burger -->
+<div id="myMenuBurger" class="menuBurger">
+  <ul class="lienBurger">
+    <li><a href=""<?php echo home_url( '/' ); ?>>Accueil</a></li>
+    <li><a href="#">A propos</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>

@@ -33,7 +33,7 @@
                     foreach ($terms_pic_category as $individual_pic_cat) {
                         $option_value = $individual_pic_cat->slug;
                         $option_name = $individual_pic_cat->name;
-                        echo '<option value="' . $option_value . '">' . $option_name . '</option>';
+                        echo '<option class="color-filtre" value="' . $option_value . '">' . $option_name . '</option>';
                     }
                 } ?>
             </select>
