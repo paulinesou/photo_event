@@ -5,7 +5,6 @@ var openMenuBurger = document.getElementById("toggle")
 
 openMenuBurger.onclick = openBurger;
 
-
 function openBurger(){
   document.body.style.overflow = 'hidden';
   sidenavBurger.classList.add("active");

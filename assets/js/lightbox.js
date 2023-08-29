@@ -75,8 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
           var galeriePost = allGaleriePosts[i];
           var image = galeriePost.querySelector('.img-galerie img');
           var imageSrc = image.getAttribute('src');
-          var imageRef = galeriePost.querySelector('.contenu-ref')
-          var imageCat = galeriePost.querySelector('.contenu-categorie')
+          var imageRef = galeriePost.querySelector('.contenu-ref');
+          var imageCat = galeriePost.querySelector('.contenu-categorie');
   
           // Vérifie si l'attribut 'src' de l'image correspond à la valeur de srcValue
           if (imageSrc === srcValue || imageRef === refValue || imageCat === catValue) {
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
               console.log('Nouvelle valeur de refValue :', refValue);
               console.log('Nouvelle valeur de catValue :', catValue);
   
-              // Met à jour la source de l'image  et les infos dans la lightbox avec la nouvelle source
+              // Met à jour la source de l'image et les infos dans la lightbox avec la nouvelle source
               lightboxImage.setAttribute("src", srcValue);
               lightboxRefElement.textContent = refValue;
               lightboxCatElement.textContent = catValue;
