@@ -203,30 +203,7 @@ nav a:hover:before {
 
 #myMenuBurger.active {
 	display: block;
-	animation: down 1s;
 	transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-@keyframes up{
-	from {
-		opacity: 0;
-		transform: translate3d(0, 20%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-}
-
-@keyframes down{
-	from {
-		opacity: 0;
-		transform: translate3d(0, -20%, 0);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
 }
 
 /* FILTRE */
@@ -555,13 +532,6 @@ article{
 	position: absolute;
 	width: 11%;
 	height: 15%;
-	/* margin-top: 10px; */
-	/* width: 80px; */
-	/* height: 70px;
-	display: flex;
-	justify-content: center; */
-	/* margin-right: 45px;
-	margin-top: 10px; */
 }
 
 .img-arrow img{
@@ -724,6 +694,16 @@ input{
 		display: none;
 	}
 
+	/* Modale de contact*/
+	#modal{
+		z-index: 5;
+	}
+
+	.modal-contact{
+		overflow: scroll;
+		height: 86%;
+	}
+
 	/* Titre header */
 	.text-header{
 		left: 2%;
@@ -748,8 +728,18 @@ input{
 
 	.galerie-post,
 	.image-galerie,
-	article{
+	article,
+	.image-contenu{
 		width: 100%;
+	}
+
+	#lightbox,
+	.icon-plein-ecran{
+		display: none;
+	}
+
+	.icon-oeil{
+		left: calc(50% - 20px);
 	}
 
 	/* Single page */
@@ -789,6 +779,10 @@ input{
 
 	.img-article-similaire{
 		flex-direction: column;
+	}
+
+	.img-post:hover .single-image-contenu{
+		opacity: 0;
 	}
 
 	/* Footer */

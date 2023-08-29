@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Ajoute un écouteur d'événements pour le clic sur le bouton précédent
   lightboxPrev.addEventListener('click', function() {
-      // Trouve tous les conteneurs .galerie-post
+    // Trouve tous les conteneurs .galerie-post
       var allGaleriePosts = document.querySelectorAll('.galerie-post');
   
       // Trouve l'élément .galerie-post de l'image actuellement affichée
@@ -79,15 +79,20 @@ document.addEventListener("DOMContentLoaded", function() {
           var imageCat = galeriePost.querySelector('.contenu-categorie');
   
           // Vérifie si l'attribut 'src' de l'image correspond à la valeur de srcValue
-          if (imageSrc === srcValue || imageRef === refValue || imageCat === catValue) {
+          if (imageSrc === srcValue) {
               currentGaleriePost = galeriePost; // Définit l'élément galerie-post actuel
               break; // Sort de la boucle dès que l'élément est trouvé
           }
 
-        //   if (imageRef === refValue) {
-        //     currentGaleriePost = galeriePost;
-        //       break;
-        //   }
+          if (imageRef === refValue) {
+            currentGaleriePost = galeriePost;
+              break;
+          }
+
+          if (imageCat === catValue) {
+            currentGaleriePost = galeriePost;
+              break;
+          }
       }
   
       // Si nous avons trouvé l'élément .galerie-post actuel
@@ -143,8 +148,18 @@ document.addEventListener("DOMContentLoaded", function() {
           var imageRef = galeriePost.querySelector('.contenu-ref')
           var imageCat = galeriePost.querySelector('.contenu-categorie')
   
-          if (imageSrc === srcValue || imageRef === refValue || imageCat === catValue) {
+          if (imageSrc === srcValue) {
               currentGaleriePost = galeriePost;
+              break;
+          }
+
+          if (imageRef === refValue) {
+            currentGaleriePost = galeriePost;
+              break;
+          }
+
+          if (imageCat === catValue) {
+            currentGaleriePost = galeriePost;
               break;
           }
       }

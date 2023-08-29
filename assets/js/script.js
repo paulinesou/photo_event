@@ -160,6 +160,7 @@ prevArrow.addEventListener('mouseleave', () => {
 const modal = document.getElementById("modal");
 const contactMenu = document.getElementById("menu-item-212"); 
 const contactPost = document.querySelector(".btn-contact");
+const contactBurger = document.getElementById("contact-burger");
 
 contactMenu.onclick = function(event){
     modal.style.display = 'block';
@@ -174,6 +175,13 @@ window.onclick = function(event) {
 
 if (contactPost !== null) {
   contactPost.onclick = function(){
+    modal.style.display = 'block';
+}
+}
+
+if (contactBurger !== null) {
+  contactBurger.onclick = function(event){
+    event.preventDefault();
     modal.style.display = 'block';
 }
 }
