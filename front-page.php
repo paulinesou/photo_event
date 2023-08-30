@@ -21,9 +21,10 @@
         'paged' => 1,
     );
     ?>
-
+<!-- Section des Filtres -->
 <section id="home-filtre" class="filtre">
     <div class="filtre-cat-form">
+        <!-- Filtre catégorie -->
         <form id="filter-cat" class="js-filter-form">
             <label for="categorie" class="letters-transform "></label>
             <select name="categories" id="categorie" class="filters_text">
@@ -38,7 +39,7 @@
                 } ?>
             </select>
         </form>
-    
+        <!-- Filtre format -->
         <form id="filter-formats">
             <label for="format" class="letters-transform"></label>
             <select name="format" id="format" class="filters_text">
@@ -55,7 +56,7 @@
 
         </form>
     </div>
-    
+    <!-- Filtre tri -->
     <div class="filtre-dates">
         <form id="filter-date">
             <div class="filtre-tri">
@@ -85,7 +86,7 @@
     ?>
         <?php while ($galeries->have_posts()) : $galeries->the_post(); ?>
             
-                <?php get_template_part('template-part/content', 'galerie-post'); ?>
+            <?php get_template_part('template-part/content', 'galerie-post'); ?>
         
         <?php endwhile; ?>
     <?php endif; ?>

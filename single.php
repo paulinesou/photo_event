@@ -4,6 +4,7 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <article class="galerie-single-post">
+                <!-- Div contenant les informations de la photo -->
                 <div class="infos">
                     <h1><?php the_title(); ?></h1>
                     <p><?php echo get_field_object('reference')['label'];?> : 
@@ -17,19 +18,19 @@
                     <p><?php echo get_field_object('annee')['label']; ?> :
                     <?php the_field('annee'); ?></p>
                 </div>
+                <!-- Div contenant la photo -->
                 <div class="img-post">
-                        <!-- Div contenant mon image -->
-                        <div class="single-similaire">
-                            <?php the_post_thumbnail(); ?>
-                        </div>
-                            <!-- Div contenant les éléments au survol -->
-                        <div class="single-image-contenu">
-                            <i class="icon-plein-ecran fa-solid fa-expand"></i>
-                        </div>
+                    <!-- Div contenant mon image -->
+                    <div class="single-similaire">
+                        <?php the_post_thumbnail(); ?>
                     </div>
-                    
+                    <!-- Div contenant les éléments au survol -->
+                    <div class="single-image-contenu">
+                        <i class="icon-plein-ecran fa-solid fa-expand"></i>
+                    </div>
                 </div>
             </article>
+            <!-- Div contenant le bouton de contact et la partie next/prev -->
             <div class="info-next-prev">
                 <div class="info-compl">
                     <p>Cette photo vous intéresse ?</p>
@@ -37,44 +38,44 @@
                 </div>
                 <?php get_template_part('template-part/next-and-prev'); ?>
             </div>
+            <!-- Div contenant les photos similaires -->
             <div class="info-similaire">
                 <p>Vous aimerez aussi</p>
-            
                 <div class="img-article-similaire">
-                <?php 
-                // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
-                $args = array(
-                'post_type' => 'any',
-                'meta_key' => 'categorie',
-                'meta_value' => get_field('categorie'), 
-                'posts_per_page' => 2,
-                'paged' => 1,
-                'post__not_in'   => array( get_the_ID() ),
-                );
+                    <?php 
+                    // 1. On définit les arguments pour définir ce que l'on souhaite récupérer
+                    $args = array(
+                    'post_type' => 'any',
+                    'meta_key' => 'categorie',
+                    'meta_value' => get_field('categorie'), 
+                    'posts_per_page' => 2,
+                    'paged' => 1,
+                    'post__not_in'   => array( get_the_ID() ),
+                    );
 
-                // 2. On exécute la WP Query
-                $my_query = new WP_Query( $args );
+                    // 2. On exécute la WP Query
+                    $my_query = new WP_Query( $args );
 
-                // 3. On lance la boucle !
-                if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post(); ?>
+                    // 3. On lance la boucle !
+                    if( $my_query->have_posts() ) : while( $my_query->have_posts() ) : $my_query->the_post(); ?>
 
-                    <div class="single-post">
-                        <!-- Div contenant mon image -->
-                        <div class="single-similaire">
-                            <a class="" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-                        </div>
+                        <div class="single-post">
+                            <!-- Div contenant mon image -->
+                            <div class="single-similaire">
+                                <a class="" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+                            </div>
                             <!-- Div contenant les éléments au survol -->
-                        <div class="image-contenu">
-                            <i class="icon-plein-ecran fa-solid fa-expand"></i>
-                            <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+                            <div class="image-contenu">
+                                <i class="icon-plein-ecran fa-solid fa-expand"></i>
+                                <a class="" href="<?php the_permalink(); ?>"><i class="icon-oeil fa-regular fa-eye"></a></i>
+                            </div>
                         </div>
-                    </div>
 
-                <?php endwhile;
-                endif;
+                    <?php endwhile;
+                    endif;
 
-                // 4. On réinitialise à la requête principale (important)
-                wp_reset_postdata(); ?>
+                    // 4. On réinitialise à la requête principale (important)
+                    wp_reset_postdata(); ?>
                 </div>
                 
                 <div class="plus-photo">

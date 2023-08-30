@@ -411,6 +411,7 @@ article{
 	color: white;
 	font-family: "space mono";
 	text-transform: uppercase;
+	text-shadow: 1px 1px 3px #0D0D0D;
 }
 
 /* PAGINATION INFINI */

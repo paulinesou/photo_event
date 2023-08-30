@@ -17,13 +17,15 @@
             </a>  
             <?php 
             wp_nav_menu([
-            'menu' => 'main', 
-            'container' => false, // afin d'éviter d'avoir une div autour
-            'class' => 'header_menu', // class personnalisée
+                'menu' => 'main', 
+                'container' => false, // afin d'éviter d'avoir une div autour
+                'class' => 'header_menu', // class personnalisée
             ]);
             ?>
+
             <!-- Integration de mon template menu burger -->
             <?php get_template_part( 'template-part/menu','burger' ); ?>
+
         </div>
 
         <!-- Condition d'affichage de l'image de mon header -->
@@ -39,4 +41,4 @@
         <?php endif; ?>
     </header>
     
-    <?php wp_body_open(); ?>
+<?php wp_body_open(); ?>

@@ -16,9 +16,9 @@
             ?>
             <!-- Div contenant ma flèche de gauche -->
             <div class="prev">
-            <a href="<?php echo $prevLink; ?>">
-                <i class="fas fa-arrow-left"></i>
-            </a>
+                <a href="<?php echo $prevLink; ?>">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
             </div>
 
         <!-- Si aucun post précédent n'existe -->
@@ -36,12 +36,11 @@
             ?>
             <!-- Div contenant ma flèche de droite -->
             <div class="next">
-            <a href="<?php echo $nextLink; ?>">
-                <!-- Affiche une flèche droite -->
-                <i class="fas fa-arrow-right"></i>
-            </a>
+                <a href="<?php echo $nextLink; ?>">
+                    <!-- Affiche une flèche droite -->
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-
         <?php } ?>
 
     </div>
