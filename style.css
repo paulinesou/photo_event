@@ -177,8 +177,8 @@ nav a:hover:before {
 	background-color: #E00000;
 	transition: top 0.5s ease;
 	overflow: hidden;
-	margin-top: 112px;
-	height: calc(100vh - 112px);
+	margin-top: 80px;
+	height: calc(100vh - 80px);
 }
   
 .menuBurger a {
